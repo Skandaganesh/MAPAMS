@@ -8,7 +8,7 @@ from simulate_llm import simulate_llm
 from prompt_graph import check_contradictory_intent
 import json
 
-st.title("🛡️ MAPAMS: Multi-Agent Prompt Attack Mitigation System")
+st.title("🛡️ MAPAMS: Multi-Agent Prompt Attack Assessment and Mitigation System")
 
 user_prompt = st.text_area("Enter a prompt:")
 if st.button("Analyze"):
@@ -23,11 +23,11 @@ if st.button("Analyze"):
 
         
         score = 0
-        score += 0.8 * toxicity
-        score += 0.6 * similarity
-        score += 0.6 * reflexion
-        score += 0.7 if dangerous_intent else 0
-        score += 0.7 if contradictory_flag else 0
+        score += 0.7 * toxicity
+        score += 0.1 * similarity
+        score += 0.4 * reflexion
+        score += 0.4 if dangerous_intent else 0
+        score += 0.4 if contradictory_flag else 0
 
         risk_level = (
             "🔴 High(Jail break Prompt)" if score >= 0.75 else
