@@ -1,6 +1,8 @@
-# MAPAMS: Modular Adversarial Prompt Assessment & Mitigation System 🔒
+# Problem-2.3: Assessment of Adversarial (Jailbreak) Attacked Prompts
 
-## 🧠 Problem Statement
+## MAPAMS: Modular Adversarial Prompt Assessment & Mitigation System 🔒
+
+## 🧠 Problem Statement:
 Large Language Models (LLMs) like GPT-4 and LLaMA are vulnerable to **jailbreak attacks**—cleverly crafted prompts that bypass safety filters to produce harmful or unethical content. These prompts often use tricks like:
 - Prompt obfuscation (e.g., Unicode swaps, typos)
 - Indirect roleplay or hypothetical framing
