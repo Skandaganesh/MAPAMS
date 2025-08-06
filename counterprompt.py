@@ -1,6 +1,7 @@
-from simulate_llm import simulate_llm
-
-def generate_counter_response(prompt: str) -> str:
-    prompt_input = f"You are an AI safety layer. A user asked: '{prompt}'. Explain why it may be unsafe and how to ask it safely."
-    answers = simulate_llm(prompt_input)
-    return answers.get("gpt-4") or list(answers.values())[0]
+def reflexion_score(prompt, llm_response):
+    score = 0.0
+    for model, reply in llm_response.items():
+        reply_lower = reply.lower()
+        if any(term in reply_lower for term in ["illegal", "not allowed", "against policy", "i cannot"]):
+            score += 0.5
+    return min(score, 1.0)

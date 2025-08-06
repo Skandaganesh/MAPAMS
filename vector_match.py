@@ -1,13 +1,13 @@
 from sentence_transformers import SentenceTransformer, util
 import json
+import torch
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
+with open("jailbreak_bank.json") as f:
+    bank = json.load(f)
+    vectors = model.encode([item["prompt"] for item in bank], convert_to_tensor=True)
 
-with open("jailbreak_bank.json", "r") as f:
-    jailbreak_prompts = json.load(f)
-    jailbreak_embeddings = model.encode(jailbreak_prompts, convert_to_tensor=True)
-
-def vector_similarity_score(user_prompt: str) -> float:
-    user_embedding = model.encode(user_prompt, convert_to_tensor=True)
-    cosine_scores = util.pytorch_cos_sim(user_embedding, jailbreak_embeddings)
-    return float(cosine_scores.max())
+def vector_score(input_text):
+    input_vec = model.encode(input_text, convert_to_tensor=True)
+    cosine_scores = util.pytorch_cos_sim(input_vec, vectors)[0]
+    return float(torch.max(cosine_scores))

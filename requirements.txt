@@ -17,3 +17,16 @@ scikit-learn
 python-docx
 pytesseract
 Pillow
+numpy
+scipy
+openai
+torch
+transformers
+sentence-transformers
+streamlit
+scikit-learn
+pytesseract
+Pillow
+graphviz
+faiss-cpu
+rapidfuzz
