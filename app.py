@@ -1,4 +1,4 @@
-# app.py
+
 import streamlit as st
 from sanitize import sanitize_prompt
 from classifier import is_toxic, is_dangerous_intent
@@ -21,7 +21,7 @@ if st.button("Analyze"):
         dangerous_intent = is_dangerous_intent(cleaned)
         contradictory_flag = check_contradictory_intent(cleaned)
 
-        # Compute final risk
+        
         score = 0
         score += 0.8 * toxicity
         score += 0.6 * similarity
