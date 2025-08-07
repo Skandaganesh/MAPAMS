@@ -47,13 +47,6 @@ To build a **hybrid, modular framework** that can intelligently assess, detect, 
 
 ---
 
-## 📍 Live Demo
-
-🟢 **Try it here:**  
-[🔗 MAPAMS Demo (Streamlit App)](https://jagrathakavach.streamlit.app/)
-
----
-
 ## 🧪 Proof of Concept
 
 ### ✅ Safe Prompt Example:
