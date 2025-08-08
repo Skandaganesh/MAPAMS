@@ -24,7 +24,7 @@ if st.button("Analyze"):
         
         score = 0
         score += 0.7 * toxicity
-        score += 0.1 * similarity
+        score += 0.15 * similarity
         score += 0.4 * reflexion
         score += 0.4 if dangerous_intent else 0
         score += 0.4 if contradictory_flag else 0
