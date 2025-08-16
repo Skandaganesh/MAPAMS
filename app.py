@@ -39,10 +39,10 @@ if st.button("Analyze"):
         st.markdown(f"🧪 **Sanitized Prompt:** {cleaned}")
         st.markdown(f"☣️ **Toxicity Score:** {toxicity:.2f}")
         st.markdown(f"🔍 **Similarity with known jailbreaks:** {similarity:.2f}")
-        if 0==0:
+        if score >= 0.7:
             st.markdown(f"🧠 Shadow LLM Response:\n\n{list(llm_response.values())[0]}")
         else:
-            st.markdown(f"🧠 Shadow LLM Response: Null (Jailbreak detected)")
+            st.markdown(f"🧠 Shadow LLM Response:\n {list(llm_response.values())[0]} \n (Jailbreak detected)")
         st.markdown(f"🛡️ **Counterprompt / Reflexion Score:** {reflexion:.2f}")
         st.markdown(f"❗ **Dangerous Intent Detected:** {'Yes' if dangerous_intent else 'No'}")
         st.markdown(f"🔐 **Contradictory Intent via Graph:** {'Yes' if contradictory_flag else 'No'}")
