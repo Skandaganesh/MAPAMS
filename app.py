@@ -42,7 +42,7 @@ if st.button("Analyze"):
         if score >= 0.7:
             st.markdown(f"🧠 Shadow LLM Response:\n\n{list(llm_response.values())[0]}")
         else:
-            st.markdown(f"🧠 Shadow LLM Response:\n {list(llm_response.values())[0]} \n (Jailbreak detected)")
+            st.markdown(f"🧠 Shadow LLM Response:Null(Jailbreak detected)")
         st.markdown(f"🛡️ **Counterprompt / Reflexion Score:** {reflexion:.2f}")
         st.markdown(f"❗ **Dangerous Intent Detected:** {'Yes' if dangerous_intent else 'No'}")
         st.markdown(f"🔐 **Contradictory Intent via Graph:** {'Yes' if contradictory_flag else 'No'}")
