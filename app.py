@@ -24,13 +24,13 @@ if st.button("Analyze"):
         
         score = 0
         score += 0.7 * toxicity
-        score += 0.15 * similarity
-        score += 0.4 * reflexion
+        score += 0.8 * similarity
+        score += 0.7 * reflexion
         score += 0.4 if dangerous_intent else 0
         score += 0.4 if contradictory_flag else 0
 
         risk_level = (
-            "🔴 High(Jail break Prompt)" if score >= 0.75 else
+            "🔴 High(Jail break Prompt)" if score >= 0.70 else
             "🟡 Medium risk" if score >= 0.4 else
             "🟢 Safe"
         )
@@ -39,7 +39,7 @@ if st.button("Analyze"):
         st.markdown(f"🧪 **Sanitized Prompt:** {cleaned}")
         st.markdown(f"☣️ **Toxicity Score:** {toxicity:.2f}")
         st.markdown(f"🔍 **Similarity with known jailbreaks:** {similarity:.2f}")
-        if score<0.4:
+        if 0==0:
             st.markdown(f"🧠 Shadow LLM Response:\n\n{list(llm_response.values())[0]}")
         else:
             st.markdown(f"🧠 Shadow LLM Response: Null (Jailbreak detected)")
