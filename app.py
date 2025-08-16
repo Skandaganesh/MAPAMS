@@ -39,7 +39,7 @@ if st.button("Analyze"):
         st.markdown(f"🧪 **Sanitized Prompt:** {cleaned}")
         st.markdown(f"☣️ **Toxicity Score:** {toxicity:.2f}")
         st.markdown(f"🔍 **Similarity with known jailbreaks:** {similarity:.2f}")
-        if score >= 0.7:
+        if score <= 0.7:
             st.markdown(f"🧠 Shadow LLM Response:\n\n{list(llm_response.values())[0]}")
         else:
             st.markdown(f"🧠 Shadow LLM Response:Null(Jailbreak detected)")
