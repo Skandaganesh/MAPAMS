@@ -27,6 +27,7 @@ streamlit
 scikit-learn
 pytesseract
 Pillow
+dotenv
 graphviz
 faiss-cpu
 rapidfuzz
